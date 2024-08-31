@@ -2,7 +2,7 @@
 
 ![architecture](/public/staticsitegenerator_infrastructure.png)
 
-###💻 A program to covert markdowns into a static website.
+## 💻 A program to covert markdowns into a static website.
 
 The flow of data through the full system:
 
