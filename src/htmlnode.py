@@ -4,4 +4,10 @@ class HTMLNode:
         self.value = value
         self.children = children
         self.props = props 
+    def to_html(self):
+        raise NotImplementedError()
+    
+    def props_to_html(self):
+        return f"href=\"{self.props["href"]}\" target=\"{self.props["target"]}\""
+    
         
