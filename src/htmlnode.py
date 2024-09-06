@@ -4,11 +4,24 @@ class HTMLNode:
         self.value = value
         self.children = children
         self.props = props 
+        
+    def __eq__(self, other):
+        if isinstance(other, HTMLNode):
+            return (
+                self.tag == other.tag and
+                self.value == other.value and
+                self.children == other.children and
+                self.props == other.props
+            )
+        return False
+    
     def to_html(self):
         raise NotImplementedError()
     
     def props_to_html(self):
-        return f"href=\"{self.props["href"]}\" target=\"{self.props["target"]}\""
+        if self.props:
+            return " ".join(f'{key}="{value}"' for key, value in self.props.items())
+        return ""
     
     def __repr__(self):
         return f"HTMLNode({self.tag}, {self.value}, {self.children}, {self.props})"
