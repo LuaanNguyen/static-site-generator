@@ -26,6 +26,11 @@ class HTMLNode:
     def __repr__(self):
         return f"HTMLNode({self.tag}, {self.value}, {self.children}, {self.props})"
     
-    
+
+#A LeafNode is a type of HTMLNode that represents a single HTML tag with no children
+class LeafNode(HTMLNode):
+    def __init__(self, tag, value = None, props = None):
+        super().__init__(tag = tag, value = value, children = None, props = props)
     
         
+    
