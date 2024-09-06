@@ -41,3 +41,12 @@ class LeafNode(HTMLNode):
             return f"<{self.tag} {self.props_to_html()}>{self.value}</{self.tag}>"
         
     
+#The new ParentNode class will handle the nesting of HTML nodes inside of one another. 
+#Any HTML node that's not "leaf" node (i.e. it has children) is a "parent" node.
+
+class ParentNode(HTMLNode):
+    def __init__(self, tag, children, props):
+        super().__init__(tag = tag, children = children, props = props)
+    
+    
+        
