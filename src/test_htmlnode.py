@@ -1,6 +1,7 @@
 import unittest 
 from htmlnode import HTMLNode
 from htmlnode import LeafNode
+from htmlnode import ParentNode
 
 class TestHTMLNode(unittest.TestCase):
     def test_eq(self):
@@ -36,7 +37,76 @@ class TestLeafNode(unittest.TestCase):
             '<a href="https://www.google.com" target="_blank">This is an anchor tag</a>', leaf_node.to_html()
         )
         
-    
+class TestParentNode(unittest.TestCase):
+    def test_eq(self):
+        parent_node = ParentNode(
+            "div",
+            [
+                LeafNode("b", "Bold text"),
+                LeafNode(None, "Normal text")
+            ],
+            {}
+        )
+        parent_node2 = ParentNode(
+            "div",
+            [
+                LeafNode("b", "Bold text"),
+                LeafNode(None, "Normal text")
+            ],
+            {}
+        )
+        self.assertEqual(parent_node, parent_node2)
+        
+    def test_eq_false(self):
+        parent_node = ParentNode(
+            "div",
+            [
+                LeafNode("b", "Bold text"),
+                LeafNode(None, "Normal text")
+            ],
+            {}
+        )
+        parent_node2 = ParentNode(
+            "p",
+            [
+                LeafNode("b", "Bold text"),
+                LeafNode(None, "Normal text")
+            ],
+            {}
+        )
+        self.assertNotEqual(parent_node, parent_node2)
+
+    def test_to_html(self):
+        parent_node = ParentNode(
+            "div",
+            [
+                LeafNode("b", "Bold text"),
+                LeafNode(None, "Normal text"),
+                LeafNode("i", "Italic text")
+            ],
+            {}
+        )
+        self.assertEqual(
+            parent_node.to_html(),
+            "<div ><b>Bold text</b>Normal text<i>Italic text</i></div>"
+        )
+
+    def test_no_tag(self):
+        with self.assertRaises(ValueError) as context:
+            ParentNode(
+                None,
+                [
+                    LeafNode("b", "Bold text"),
+                    LeafNode(None, "Normal text")
+                ],
+                {}
+            ).to_html()
+        self.assertEqual(str(context.exception), "All parent nodes must have an HTML tag")
+
+    def test_no_children(self):
+        with self.assertRaises(ValueError) as context:
+            ParentNode("div", None, {}).to_html()
+        self.assertEqual(str(context.exception), "All parent nodes should have children")
     
         
 if __name__ == "__main__":
