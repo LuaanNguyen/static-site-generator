@@ -11,6 +11,8 @@ class HTMLNode:
         return f"href=\"{self.props["href"]}\" target=\"{self.props["target"]}\""
     
     def __repr__(self):
-        return f""
+        return f"HTMLNode({self.tag}, {self.value}, {self.children}, {self.props})"
+    
+    
     
         
