@@ -11,3 +11,10 @@ The flow of data through the full system:
 3. The generator converts the Markdown files to a final HTML file for each page and writes them to the `/public` directory.
 4. Start the built-in Python HTTP server (a separate program, unrelated to the generator) to serve the contents of the /public directory on `http://localhost:8888` (our local machine).
 5. We open a browser and navigate to `http://localhost:8888` to view the rendered site.
+
+## Run the program `./main.sh`
+
+## Edit/ Run test cases at `./test.sh`
+
+
+
