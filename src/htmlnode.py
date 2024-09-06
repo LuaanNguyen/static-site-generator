@@ -10,4 +10,7 @@ class HTMLNode:
     def props_to_html(self):
         return f"href=\"{self.props["href"]}\" target=\"{self.props["target"]}\""
     
+    def __repr__(self):
+        return f""
+    
         
