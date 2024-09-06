@@ -18,3 +18,6 @@ class TestHTMLNode(unittest.TestCase):
         html_node = HTMLNode("a", "This is a anchor tag", ["<p>"], {"href": "https://www.google.com"})
         html_node2 = HTMLNode("h1", "This is a h1 tag", ["<div>"], {"href": "https://www.linkedin.com"})
         self.assertNotEqual(html_node, html_node2)
+        
+if __name__ == "__main__":
+    unittest.main()
