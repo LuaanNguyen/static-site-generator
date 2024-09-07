@@ -64,6 +64,3 @@ class ParentNode(HTMLNode):
             return f"<{self.tag} {self.props_to_html()}>{children_tags}</{self.tag}>"
                 
                 
-    
-    
-        
