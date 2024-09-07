@@ -109,5 +109,7 @@ class TestParentNode(unittest.TestCase):
         self.assertEqual(str(context.exception), "All parent nodes should have children")
     
         
+
+
 if __name__ == "__main__":
     unittest.main()
