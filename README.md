@@ -1,6 +1,6 @@
 # static-site-generator ♺
 
-![architecture](/public/staticsitegenerator_infrastructure.png)
+![cover](/public/cover.png)
 
 ## 💻 A program to covert markdowns into a static website.
 
@@ -12,9 +12,14 @@ The flow of data through the full system:
 4. Start the built-in Python HTTP server (a separate program, unrelated to the generator) to serve the contents of the /public directory on `http://localhost:8888` (our local machine).
 5. We open a browser and navigate to `http://localhost:8888` to view the rendered site.
 
-## Run the program `./main.sh`
+## Run the program:
 
-## Edit/ Run test cases at `./test.sh`
+```
+./main.sh
+```
 
+## Edit/run test cases:
 
-
+```
+./test.sh
+```
