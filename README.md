@@ -2,7 +2,7 @@
 
 Static sites are very popular in the real world for blogs and other content-heavy websites because they're lightning-fast, secure, and easy to host.
 
-![cover](/public/cover.png)
+![cover](/image/cover.png)
 
 ## Architecture 🏛️
 
@@ -14,7 +14,7 @@ The flow of data through the full system:
 4. Start the built-in Python HTTP server (a separate program, unrelated to the generator) to serve the contents of the /public directory on `http://localhost:8888` (our local machine).
 5. We open a browser and navigate to `http://localhost:8888` to view the rendered site.
 
-![architecture](/public/architecture.png)
+![architecture](/image/architecture.png)
 
 ## How the SSG work 🧑‍🍳
 
